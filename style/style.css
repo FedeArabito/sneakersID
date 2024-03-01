@@ -1,0 +1,177 @@
+/*fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+:root{
+    /*colores*/
+    --clr--primary: rgb(210,255,4);
+    --clr--secondary: rgb(32,33,31);
+}
+
+body{
+    background-color: black;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 50px;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: var(--clr--primary);
+}
+
+header h1{
+    color: var(--clr--secondary);
+    font-weight: bold;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;;
+}
+
+header .hamburger{
+    display: none;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+header nav ul li{
+    list-style: none;
+}
+
+header nav ul li a{
+    display: block;
+    color: var(--clr--secondary);
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+header nav ul li a:hover{
+    padding: 0.5rem;
+    border-radius: 50px;
+    background-color: var(--clr--secondary);
+    color: var(--clr--primary);
+}
+
+@media screen and (max-width: 822px) {
+    .hamburguer{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburguer .barra{
+        margin: 5px;
+        width: 30px;
+        height: 3px;
+        background-color: var(--clr--secondary);
+    }
+
+    .carrito{
+        display: none;
+    }
+
+
+    .nav{
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: var(--clr--primary);
+        transition: 0.2s;
+        overflow: hidden;
+        text-align: center;
+        height: 0;
+    }
+
+    .nav.active{
+      display: inline-block;
+        height: 250px;
+    }
+
+    nav ul{
+        justify-content: center;
+        flex-direction: column;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        gap: 0.5rem;
+        text-align: center;
+        
+    }
+
+    nav ul li a{
+        margin-bottom: 12px;
+    }
+}
+
+
+
+/*CARDS*/
+
+.card-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.card-wrapper .card-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15rem;
+}
+
+.card-wrapper .card-grid .card{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid var(--clr--secondary);
+    height: auto;
+    padding: 0.75rem;
+    background-color: var(--clr--secondary);
+}
+
+.card h2{
+    margin-block: 5px;
+}
+
+.card-wrapper .card-grid .card .card-img{
+    width: 100%;
+    height: auto   ;
+}
+.card .aregar{
+    height: 24px;
+    width: 100%;
+}
+
+.card .card-btn {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    gap: 0.75rem;
+}
+.card .card-btn a{
+    color: var(--clr--secondary);
+    background-color: var(--clr--primary);
+    padding: 5px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 12px;
+}
