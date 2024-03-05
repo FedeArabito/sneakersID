@@ -2,27 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
 
-:root{
+:root {
     /*colores*/
-    --clr--primary: rgb(210,255,4);
-    --clr--secondary: rgb(32,33,31);
+    --clr--primary: rgb(210, 255, 4);
+    --clr--secondary: rgb(32, 33, 31);
 }
 
-body{
+body {
     background-color: black;
 }
 
 
-header{
+header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1.5rem 50px;
     flex-wrap: wrap;
@@ -30,29 +30,30 @@ header{
     background-color: var(--clr--primary);
 }
 
-header h1{
+header h1 {
     color: var(--clr--secondary);
     font-weight: bold;
     font-family: "Kode Mono", monospace;
     font-optical-sizing: auto;
-    font-style: normal;;
+    font-style: normal;
+    ;
 }
 
-header .hamburger{
+header .hamburger {
     display: none;
 }
 
-header nav ul{
+header nav ul {
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-header nav ul li{
+header nav ul li {
     list-style: none;
 }
 
-header nav ul li a{
+header nav ul li a {
     display: block;
     color: var(--clr--secondary);
     font-weight: 400;
@@ -61,7 +62,7 @@ header nav ul li a{
     transition: all .3s;
 }
 
-header nav ul li a:hover{
+header nav ul li a:hover {
     padding: 0.5rem;
     border-radius: 50px;
     background-color: var(--clr--secondary);
@@ -69,29 +70,29 @@ header nav ul li a:hover{
 }
 
 @media screen and (max-width: 822px) {
-    .hamburguer{
+    .hamburguer {
         display: block;
         cursor: pointer;
     }
 
-    .hamburguer .barra{
+    .hamburguer .barra {
         margin: 5px;
         width: 30px;
         height: 3px;
         background-color: var(--clr--secondary);
     }
 
-    .carrito{
+    .carrito {
         display: none;
     }
 
 
-    .nav{
+    .nav {
         position: absolute;
         top: 80px;
         left: 0;
         right: 0;
-        width: 100vw;
+        width: 200px;
         background-color: var(--clr--primary);
         transition: 0.2s;
         overflow: hidden;
@@ -99,22 +100,32 @@ header nav ul li a:hover{
         height: 0;
     }
 
-    .nav.active{
-      display: inline-block;
+    .nav.active {
+        display: inline-block;
+        top: 80px;
+        left: 60;
+        right: 0;
+        width: 200px;
+        background-color: var(--clr--primary);
+        transition: 0.2s;
+        overflow: hidden;
+        text-align: center;
+        height: 100vw;
         height: 250px;
     }
 
-    nav ul{
+    nav ul {
+        display: flex;
         justify-content: center;
         flex-direction: column;
         width: fit-content;
         margin: 80px auto 0 auto;
         gap: 0.5rem;
         text-align: center;
-        
+
     }
 
-    nav ul li a{
+    nav ul li a {
         margin-bottom: 12px;
     }
 }
@@ -123,20 +134,26 @@ header nav ul li a:hover{
 
 /*CARDS*/
 
-.card-wrapper{
+.card-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 4rem;
 }
 
-.card-wrapper .card-grid{
+.card-wrapper .card-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 15rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
 }
 
-.card-wrapper .card-grid .card{
+.card-wrapper .card-grid .card-img{
+    width: 100%;
+    height: 150px;
+}
+
+.card-wrapper .card-grid .card {
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -147,15 +164,16 @@ header nav ul li a:hover{
     background-color: var(--clr--secondary);
 }
 
-.card h2{
+.card h2 {
     margin-block: 5px;
 }
 
-.card-wrapper .card-grid .card .card-img{
+.card-wrapper .card-grid .card .card-img {
     width: 100%;
-    height: auto   ;
+    height: auto;
 }
-.card .aregar{
+
+.card .aregar {
     height: 24px;
     width: 100%;
 }
@@ -167,7 +185,8 @@ header nav ul li a:hover{
     margin-top: 5px;
     gap: 0.75rem;
 }
-.card .card-btn a{
+
+.card .card-btn a {
     color: var(--clr--secondary);
     background-color: var(--clr--primary);
     padding: 5px;
