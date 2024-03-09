@@ -3,131 +3,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 :root {
-    /*colores*/
-    --clr--primary: rgb(210, 255, 4);
-    --clr--secondary: rgb(32, 33, 31);
+  /*colores*/
+  --clr--primary: rgb(210, 255, 4);
+  --clr--secondary: rgb(32, 33, 31);
 }
 
 body {
-    background-color: black;
+  background-color: black;
 }
 
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 50px;
-    flex-wrap: wrap;
-    text-align: center;
-    background-color: var(--clr--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 50px;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: var(--clr--primary);
 }
 
 header h1 {
-    color: var(--clr--secondary);
-    font-weight: bold;
-    font-family: "Kode Mono", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-    ;
+  color: var(--clr--secondary);
+  font-weight: bold;
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  ;
 }
 
 header .hamburger {
-    display: none;
+  display: none;
 }
 
 header nav ul {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 header nav ul li {
-    list-style: none;
+  list-style: none;
 }
 
 header nav ul li a {
-    display: block;
-    color: var(--clr--secondary);
-    font-weight: 400;
-    font-size: 18px;
-    text-decoration: none;
-    transition: all .3s;
+  display: block;
+  color: var(--clr--secondary);
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all .3s;
 }
 
 header nav ul li a:hover {
-    padding: 0.5rem;
-    border-radius: 50px;
-    background-color: var(--clr--secondary);
-    color: var(--clr--primary);
+  padding: 0.5rem;
+  border-radius: 50px;
+  background-color: var(--clr--secondary);
+  color: var(--clr--primary);
+}
+
+header .carrito {
+  cursor: pointer;
+}
+
+.carrito img {
+  position: relative;
+}
+
+.carrito span {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  color: black;
 }
 
 @media screen and (max-width: 822px) {
-    .hamburguer {
-        display: block;
-        cursor: pointer;
-    }
+  .hamburguer {
+    display: block;
+    cursor: pointer;
+    border: 4px solid black;
+  }
 
-    .hamburguer .barra {
-        margin: 5px;
-        width: 30px;
-        height: 3px;
-        background-color: var(--clr--secondary);
-    }
+  .hamburguer .barra {
+    margin: 5px;
+    width: 30px;
+    height: 3px;
+    background-color: var(--clr--secondary);
+  }
 
-    .carrito {
-        display: none;
-    }
+  .carrito {
+    display: none;
+  }
 
 
-    .nav {
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        width: 200px;
-        background-color: var(--clr--primary);
-        transition: 0.2s;
-        overflow: hidden;
-        text-align: center;
-        height: 0;
-    }
+  .nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 200px;
+    background-color: var(--clr--primary);
+    transition: 0.2s;
+    overflow: hidden;
+    text-align: center;
+    height: 0;
+  }
 
-    .nav.active {
-        display: inline-block;
-        top: 80px;
-        left: 60;
-        right: 0;
-        width: 200px;
-        background-color: var(--clr--primary);
-        transition: 0.2s;
-        overflow: hidden;
-        text-align: center;
-        height: 100vw;
-        height: 250px;
-    }
+  .nav.active {
+    display: inline-block;
+    top: 80px;
+    left: 60;
+    right: 0;
+    width: 200px;
+    background-color: var(--clr--primary);
+    transition: 0.2s;
+    overflow: hidden;
+    text-align: center;
+    height: 100vw;
+    height: 250px;
+  }
 
-    nav ul {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        width: fit-content;
-        margin: 80px auto 0 auto;
-        gap: 0.5rem;
-        text-align: center;
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    gap: 0.5rem;
+    text-align: center;
 
-    }
+  }
 
-    nav ul li a {
-        margin-bottom: 12px;
-    }
+  nav ul li a {
+    margin-bottom: 12px;
+  }
 }
 
 
@@ -135,62 +151,66 @@ header nav ul li a:hover {
 /*CARDS*/
 
 .card-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4rem;
 }
 
 .card-wrapper .card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
 }
 
-.card-wrapper .card-grid .card-img{
-    width: 100%;
-    height: 150px;
+.card-wrapper .card-grid .card-img {
+  width: 100%;
+  height: 150px;
 }
 
 .card-wrapper .card-grid .card {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    width: 200px;
-    border: 1px solid var(--clr--secondary);
-    height: auto;
-    padding: 0.75rem;
-    background-color: var(--clr--secondary);
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid var(--clr--secondary);
+  height: auto;
+  padding: 0.75rem;
+  background-color: var(--clr--secondary);
+  border-radius: 8px;
+  box-shadow: 2px 0px 5px 4px rgba(255, 255, 255, 0.644);
+  -webkit-box-shadow: 2px 0px 5px 4px rgba(255, 255, 255, 0.671);
+  -moz-box-shadow: 2px 0px 5px 4px rgba(255, 255, 255, 0.582);
 }
 
 .card h2 {
-    margin-block: 5px;
+  color: var(--clr--primary);
+  margin-block: 5px;
+  font-size: 25px;
+}
+
+.card-precio {
+  color: black;
+  font-weight: bold;
+  font-size: medium;
 }
 
 .card-wrapper .card-grid .card .card-img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.card .aregar {
-    height: 24px;
-    width: 100%;
-}
 
 .card .card-btn {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 5px;
-    gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 5px;
+  gap: 0.75rem;
 }
 
-.card .card-btn a {
-    color: var(--clr--secondary);
-    background-color: var(--clr--primary);
-    padding: 5px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 12px;
+.card-carrito {
+  cursor: pointer;
 }
