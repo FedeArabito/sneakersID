@@ -90,34 +90,37 @@ productos.forEach((producto) => {
         carrito.push({
             precio: producto.precio,
             nombre: producto.nombre,
-            img: producto.imagen,
+            imagen:  producto.imagen,
         })
         console.log(carrito);
 
-    });
-
-    verCarrito.addEventListener('click', () => {
-        const verCarritoHeader = document.createElement('div');
-        verCarritoHeader.className = "verCarritoHeader";
-        verCarritoHeader.innerHTML = `
-        <h2 style="color: white">Carrito</h2>
-        <button>X</button>
-        `;
-        carritoContenedor.append(verCarritoHeader);
-
-        carrito.forEach((producto) = () => {
+        verCarrito.addEventListener('click', () => {
+            const verCarritoHeader = document.createElement('div');
+            verCarritoHeader.className = "verCarritoHeader";
+            verCarritoHeader.innerHTML = `
+            <h2 style="color: white">Carrito</h2>
+            <button>X</button>
+            `;
+            carritoContenedor.append(verCarritoHeader);
+    
             const carritoClickBody = document.createElement('div');
             carritoClickBody.className = "carritoCuerpo";
-            carritoClickBody.innerHTML = `
-        <img src="${producto.imagen}" alt= ""/>
-        <h3>${producto.nombre}</h3>
-        <p>$ ${producto.precio} </p>
-        `;
             carritoContenedor.append(carritoClickBody)
+            
+            carrito.forEach((producto) => {
+                carritoClickBody.innerHTML = `
+                <img src="${producto.imagen}" alt= ""/>
+                <h3>${producto.nombre}</h3>
+                <p>$ ${producto.precio} </p>
+                `;
+            });
+    
+    
+            const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+            console.log(total);
         });
-        const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
-        console.log(total);
     });
+
 
 
 });
