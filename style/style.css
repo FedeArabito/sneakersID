@@ -71,16 +71,17 @@ header nav ul li a:hover {
 
 header .carrito {
   cursor: pointer;
-}
-
-.carrito img {
   position: relative;
 }
 
+
+
 .carrito span {
   position: absolute;
-  top: 8px;
-  right: 16px;
+  top: 8;
+  right: 16;
+  left: 0;
+  bottom: 0;
   color: black;
 }
 
@@ -98,9 +99,6 @@ header .carrito {
     background-color: var(--clr--secondary);
   }
 
-  .carrito {
-    display: none;
-  }
 
 
   .nav {
@@ -173,6 +171,7 @@ header .carrito {
   display: flex;
   align-items: start;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 200px;
   border: 1px solid var(--clr--secondary);
   height: auto;
@@ -191,7 +190,7 @@ header .carrito {
 }
 
 .card-precio {
-  color: black;
+  color: #f1f1f1;
   font-weight: bold;
   font-size: medium;
 }
@@ -212,5 +211,46 @@ header .carrito {
 }
 
 .card-carrito {
+  background-color: var(--clr--primary);
   cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+
+.card-carrito img {}
+
+@media screen and (max-width: 822px) {
+  .card-wrapper .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 821px) {
+  .card-wrapper .card-grid .card {
+    width: 300px;
+  }
+}
+
+;
+
+
+/*ver carrito*/
+.verCarritoHeader {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.verCarritoHeader h2 {
+  color: white;
+}
+
+.verCarritoHeader button {
+  padding: 5px;
+}
+
+.carritoCuerpo{
+  background: #f1f1f1;
 }

@@ -1,5 +1,46 @@
-let carrito = [];
+const productos = [{
+    nombre: 'Nike Max Janowsky',
+    precio: 55000,
+    imagen: "../img/janoski.webp"
+},
+{
+    nombre: 'Air Jordan 1 Mid SE',
+    precio: 60000,
+    imagen: "../img/Air Jordan 1 Mid.webp"
+},
+{
+    nombre: 'Adidas Superstars',
+    precio: 45000,
+    imagen: "../img/Adidas Supertars.webp"
+},
+{
+    nombre: 'Vans Ultrarange',
+    precio: 40000,
+    imagen: "../img/Vans Ultrarange Exo.webp"
+},
+{
+    nombre: 'Puma Palermo',
+    precio: 57000,
+    imagen: "../img/puma.webp"
+},
+{
+    nombre: 'Topper Terre',
+    precio: 50000,
+    imagen: "../img/topper.webp"
+},
+{
+    nombre: 'New Balance 373',
+    precio: 43000,
+    imagen: "../img/nbnegro.webp"
+},
+{
+    nombre: 'New Balance 574',
+    precio: 68500,
+    imagen: "../img/nbvioleta.webp"
+}];
+
 const verCarrito = document.getElementById("carrito");
+const carritoContenedor = document.getElementById("carrito-contenedor");
 
 const seccion = document.getElementById("cards");
 
@@ -9,7 +50,8 @@ wrapper.classList.add('card-wrapper');
 const cardgrid = document.createElement('div')
 cardgrid.classList.add('card-grid');
 
-productos.forEach(producto => {
+let carrito = [];
+productos.forEach((producto) => {
 
 
     const cardbody = document.createElement('div')
@@ -44,25 +86,45 @@ productos.forEach(producto => {
     cardgrid.append(cardbody);
     cardbody.append(cardimg, cardtitulo, cardprecio, cardAgregarCarrito);
 
-
     cardAgregarCarrito.addEventListener('click', () => {
         carrito.push({
             precio: producto.precio,
             nombre: producto.nombre,
-            imagen: producto.img
+            img: producto.imagen,
         })
+        console.log(carrito);
+
     });
 
+    verCarrito.addEventListener('click', () => {
+        const verCarritoHeader = document.createElement('div');
+        verCarritoHeader.className = "verCarritoHeader";
+        verCarritoHeader.innerHTML = `
+        <h2 style="color: white">Carrito</h2>
+        <button>X</button>
+        `;
+        carritoContenedor.append(verCarritoHeader);
+
+        carrito.forEach((producto) = () => {
+            const carritoClickBody = document.createElement('div');
+            carritoClickBody.className = "carritoCuerpo";
+            carritoClickBody.innerHTML = `
+        <img src="${producto.imagen}" alt= ""/>
+        <h3>${producto.nombre}</h3>
+        <p>$ ${producto.precio} </p>
+        `;
+            carritoContenedor.append(carritoClickBody)
+        });
+        const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+        console.log(total);
+    });
+
+
 });
 
 
-verCarrito.addEventListener('click', () => {
-    const carritoClick = document.createElement('div');
-    carritoClick.className="verCarrito"
 
 
-
-});
 
 
 
