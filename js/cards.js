@@ -50,9 +50,9 @@ wrapper.classList.add('card-wrapper');
 const cardgrid = document.createElement('div')
 cardgrid.classList.add('card-grid');
 
-let carrito = [];
-productos.forEach((producto) => {
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+productos.forEach((producto) => {
 
     const cardbody = document.createElement('div')
     cardbody.classList.add('card');
@@ -86,44 +86,55 @@ productos.forEach((producto) => {
     cardgrid.append(cardbody);
     cardbody.append(cardimg, cardtitulo, cardprecio, cardAgregarCarrito);
 
+
+
     cardAgregarCarrito.addEventListener('click', () => {
         carrito.push({
             precio: producto.precio,
             nombre: producto.nombre,
-            imagen:  producto.imagen,
+            imagen: producto.imagen,
         })
+        guardarLocale();
         console.log(carrito);
 
-        verCarrito.addEventListener('click', () => {
-            const verCarritoHeader = document.createElement('div');
-            verCarritoHeader.className = "verCarritoHeader";
-            verCarritoHeader.innerHTML = `
-            <h2 style="color: white">Carrito</h2>
-            <button>X</button>
-            `;
-            carritoContenedor.append(verCarritoHeader);
-    
-            const carritoClickBody = document.createElement('div');
-            carritoClickBody.className = "carritoCuerpo";
-            carritoContenedor.append(carritoClickBody)
-            
-            carrito.forEach((producto) => {
-                carritoClickBody.innerHTML = `
-                <img src="${producto.imagen}" alt= ""/>
-                <h3>${producto.nombre}</h3>
-                <p>$ ${producto.precio} </p>
-                `;
-            });
-    
-    
-            const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
-            console.log(total);
-        });
     });
 
+});
+
+verCarrito.addEventListener('click', () => {
+    const verCarritoHeader = document.createElement('div');
+    verCarritoHeader.className = "verCarritoHeader";
+    verCarritoHeader.innerHTML = `
+    <h2 style="color: white">Carrito</h2>
+    <button>X</button>
+    `;
+    carritoContenedor.append(verCarritoHeader);
+
+    const carritoClickBody = document.createElement('div');
+    carritoClickBody.className = "carritoCuerpo";
+    carritoContenedor.append(carritoClickBody)
+
+    carrito.forEach((producto) => {
+        const productItem = document.createElement('div');
+        productItem.className = "productoEnCarrito";
+        productItem.innerHTML = `
+    <img src="${producto.imagen}" alt= ""/>
+    <h3>${producto.nombre}</h3>
+    <p>$ ${producto.precio} </p>
+    `;
+        carritoClickBody.appendChild(productItem);
+    });
+
+    const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+    console.log(total);
 
 
 });
+
+const guardarLocale = () => {
+    const JSONcarrito = JSON.stringify(carrito);
+    localStorage.setItem("carrito", JSONcarrito);
+};
 
 
 
