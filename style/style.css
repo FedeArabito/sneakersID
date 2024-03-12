@@ -74,15 +74,24 @@ header .carrito {
   position: relative;
 }
 
-
+.carrito img {
+  height: 28px;
+  width: 28px;
+}
 
 .carrito span {
   position: absolute;
-  top: 8;
-  right: 16;
-  left: 0;
-  bottom: 0;
-  color: black;
+  top: -40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  left: 50%;
+  font-size: 15px;
+  background-color: black;
+  color: var(--clr--primary);
 }
 
 @media screen and (max-width: 822px) {
@@ -218,7 +227,7 @@ header .carrito {
 }
 
 
-.card-carrito img {}
+
 
 @media screen and (max-width: 822px) {
   .card-wrapper .card-grid {
