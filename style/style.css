@@ -260,16 +260,15 @@ header .menu-md {
 .carrito-contenedor {
   position: absolute;
   display: flex;
+  flex-direction: row;
   top: 50;
   left: 50;
-  gap: 1rem;
 }
 
 .verCarritoHeader {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 1rem;
 
 }
 

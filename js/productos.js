@@ -53,5 +53,9 @@ const productos = [{
   precio: 68500,
   imagen: "../img/nbvioleta.webp",
   cantidad: 1
+<<<<<<< HEAD
 }];
 
+=======
+}];
+>>>>>>> eb98493c0ffee94d24677543294afaa485db0ab4
