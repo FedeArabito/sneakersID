@@ -7,7 +7,7 @@ const cargarApi = async () => {
 
   const datos = await respuesta.json();
   console.log(datos);
-
+  
   datos.forEach((personajes) => {
     const div = document.createElement('div')
     div.innerHTML = `
