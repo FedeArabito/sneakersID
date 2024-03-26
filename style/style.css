@@ -17,12 +17,13 @@
 
 body {
   background-color: black;
+  position: relative;
 }
 
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding: 1.5rem 50px;
   flex-wrap: wrap;
@@ -69,7 +70,14 @@ header nav ul li a:hover {
   color: var(--clr--primary);
 }
 
-header .carrito {
+header .menu-md {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+
+.carrito {
   cursor: pointer;
   position: relative;
 }
@@ -95,10 +103,14 @@ header .carrito {
 }
 
 @media screen and (max-width: 822px) {
+  header {
+    justify-content: space-between;
+  }
+
   .hamburguer {
     display: block;
     cursor: pointer;
-    border: 4px solid black;
+
   }
 
   .hamburguer .barra {
@@ -245,26 +257,48 @@ header .carrito {
 
 
 /*ver carrito*/
+.carrito-contenedor {
+  position: absolute;
+  display: flex;
+  top: 50;
+  left: 50;
+  gap: 1rem;
+}
+
 .verCarritoHeader {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: row;
+  gap: 1rem;
+
 }
 
 .verCarritoHeader h2 {
-  color: white;
+  color: var(--clr--primary)
 }
 
 .verCarritoHeader button {
-  padding: 5px;
+  border-radius: 18px;
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
 }
 
 .carritoCuerpo {
-  background: #f1f1f1;
+  background: var(--clr--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
 }
 
 .carritoCuerpo img {
   max-height: 80px;
   width: 80px;
+}
+
+.productoEnCarrito {
+  max-width: 100px;
 }

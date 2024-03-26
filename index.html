@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link rel="stylesheet" href="./style/style.css" />
     <title>Document</title>
   </head>
@@ -11,32 +16,37 @@
       <h1>Sneakers</h1>
       <nav class="nav">
         <ul>
-          <li><a href="#">Lorem</a></li>
+          <li><a href="../pages/getApi.html">API</a></li>
           <li><a href="#">Lorem</a></li>
           <li><a href="#">Lorem</a></li>
           <li><a href="#">Lorem</a></li>
         </ul>
       </nav>
 
-      <div class="carrito">
-        <img id="carrito" src="./img/cart.svg" alt="Imagen de Carrito" />
-        <span id="carrito-counter">0</span>
-      </div>
+      <div class="menu-md" style="display: flex">
+        <div class="hamburguer">
+          <div class="barra"></div>
+          <div class="barra"></div>
+          <div class="barra"></div>
+        </div>
 
-      <div class="hamburguer">
-        <div class="barra"></div>
-        <div class="barra"></div>
-        <div class="barra"></div>
+        <div class="carrito">
+          <img id="carrito" src="./img/cart.svg" alt="Imagen de Carrito" />
+          <span id="carrito-counter">0</span>
+        </div>
       </div>
     </header>
 
     <main>
       <section id="cards"></section>
-      <section id="carrito-contenedor"></section>
+      <section id="carrito-contenedor" class="carrito-contenedor"></section>
     </main>
-
-
   </body>
+  <script src="./js/productos.js"></script>
   <script src="./js/cards.js"></script>
   <script src="./js/menuHamburguesa.js"></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
 </html>
