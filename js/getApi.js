@@ -22,7 +22,7 @@ const cargarApi = async () => {
   </div>
     `
 
-    const contenedor = document.querySelector("getapi");
+    const contenedor = document.querySelector(".getapi");
     contenedor.append(div);
   });
 

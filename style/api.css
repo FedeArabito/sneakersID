@@ -9,9 +9,31 @@
   background-color: black;
 }
 
-.getapi {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: aliceblue;
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
+.getapi {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: black;
+}
+
+.personaje-status {
+  margin-bottom: 2rem;
+}
+
+img {
+  border-radius: 8px;
+  border: 0.5px solid white;
+  width: 200px;
+  height: 200px;
+}
+
+p {
+  color: white;
+}
